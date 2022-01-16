@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Stars({count}) {
+
+  if (count === 0) {
+    return;
+  }
+
   const Star = () => {
     return (
       <li>
@@ -24,5 +30,9 @@ function Stars({count}) {
     </ul>
   )
 }
+
+Stars.propTypes = {
+  count: PropTypes.number
+};
 
 export default Stars;
